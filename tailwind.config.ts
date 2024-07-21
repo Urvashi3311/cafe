@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true
+    },
     extend: {
+      fontSize: {
+        xxs: '10px'
+      },
       colors: {
         red: 'hsl(14, 86%, 42%)',
         green: 'hsl(159, 69%, 38%)',

@@ -3,7 +3,7 @@ import { Red_Hat_Text } from "next/font/google";
 import "./globals.css";
 
 const redHatText = Red_Hat_Text({
-  weight: ['400', '700'],
+  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${redHatText.className} text-base`}>{children}</body>
+      <body className={`${redHatText.className} text-base text-rose-900 bg-rose-100`}>{children}</body>
     </html>
   );
 }
