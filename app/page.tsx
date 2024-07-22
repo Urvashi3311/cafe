@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <AppProvider>
-        <main className="container pt-[95px]">
+        <main className="container py-[95px]">
           <div className="flex gap-9">
             <div className="basis-2/3">
               <h1 className="text-rose-900 mb-10 text-5xl font-bold">
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </main>
         <div className="attribution" role="contentinfo">
-          Challenge by
+          Challenge by {" "}
           <a href="https://www.frontendmentor.io?ref=challenge">
             Frontend Mentor
           </a>

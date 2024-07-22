@@ -1,16 +1,22 @@
 "use client";
-import { UseAppContext } from "../context";
+import { useAppContext } from "../context";
 import Product from "./Product";
-import { ProductType } from "@/app/lib/definitions";
+import { CartItemType, ProductType } from "@/app/lib/definitions";
 
 type ProductListPropTypes = {};
 
 const ProductList = (props: ProductListPropTypes) => {
-  const { products } = UseAppContext();
+  const { products, cart } = useAppContext();
+
+  const cartCount = (id: number): number  => {
+    let exists = cart.find(item => item.product.id === id)
+    return exists ? exists.count : 0;
+  };
+
   return (
     <div className="grid grid-cols-3 gap-x-5 gap-y-9">
       {products.map((item: ProductType, index: number) => (
-        <Product key={index} detail={item} />
+        <Product key={index} detail={item} count={cartCount(item.id)} />
       ))}
     </div>
   );

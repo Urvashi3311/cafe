@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, ReactNode } from "react";
-import { products } from "@/app/lib/data";
+import { products, cart } from "@/app/lib/data";
 import {
   AppContextType,
   AppState,
@@ -10,7 +10,7 @@ import appReducer from "@/app/reducer";
 
 const defaultValue: AppState = {
   products: products,
-  cart: [],
+  cart: cart,
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -24,18 +24,33 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
+  const incCartItemCount = (productId: number) => {
+    dispatch({ type: "INCREAMENT_COUNT", payload: productId });
+  };
+  const decCartItemCount = (productId: number) => {
+    dispatch({ type: "DECREAMENT_COUNT", payload: productId });
+  };
+
   const removeFromCart = (productId: number) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: productId });
   };
 
   return (
-    <AppContext.Provider value={{ ...state, addToCart, removeFromCart }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        addToCart,
+        removeFromCart,
+        incCartItemCount,
+        decCartItemCount,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
 };
 
-export const UseAppContext = () => {
+export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {
     throw new Error("useAppContext must be used within an AppProvider");
