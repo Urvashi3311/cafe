@@ -1,5 +1,5 @@
 import { useAppContext } from "@/app/context";
-import { useMemo } from "react";
+import CartItem from "@/app/components/CartItem";
 
 type CartPropTypes = {};
 
@@ -12,11 +12,9 @@ const Cart = (props: CartPropTypes) => {
 
   return (
     <div className="bg-white rounded-[10px] py-8 px-6">
-      Your Cart ( {getTotalCount()} )
+      <h2 className="text-red text-3xl mb-9">Your Cart ( {getTotalCount()} )</h2>
       {cart.map((item, index) => (
-        <p key={index}>
-          {item.product.name} - {item.count}{" "}
-        </p>
+        <CartItem item={item} key={index} />
       ))}
     </div>
   );

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ProductType } from "@/app/lib/definitions";
 import clsx from "clsx";
 import { useAppContext } from "@/app/context";
-import QuantityButton from "@/app/components/QuantityButton";
+import Button from "@/app/components/Button";
 
 type ProductPropTypes = {
   detail: ProductType;
@@ -36,13 +36,13 @@ const Product = (props: ProductPropTypes) => {
         <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
           {isInCart ? (
             <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-xs font-semibold whitespace-nowrap">
-              <QuantityButton
+              <Button
                 type="decrement"
                 handleClick={() => handleDecCartItemCount(product.id)}
               />
 
               {props.count}
-              <QuantityButton
+              <Button
                 type="increment"
                 handleClick={() => incCartItemCount(product.id)}
               />
