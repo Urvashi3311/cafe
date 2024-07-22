@@ -8,6 +8,8 @@ type ProductPropTypes = {
 
 const Product = (props: ProductPropTypes) => {
   const product = props.detail;
+
+  
   return (
     <div className="flex flex-col item-center justify-center gap-8">
       <div className="relative">
