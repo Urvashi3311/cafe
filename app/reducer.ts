@@ -1,7 +1,5 @@
 import {
-  AppContextType,
   AppState,
-  ProductType,
   Action,
 } from "@/app/lib/definitions";
 

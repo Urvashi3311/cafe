@@ -1,15 +1,15 @@
 "use client";
-import { useAppContext } from "../context";
-import Product from "./Product";
-import { CartItemType, ProductType } from "@/app/lib/definitions";
+import { useAppContext } from "@/app/context";
+import Product from "@/app/components/Product";
+import { ProductType } from "@/app/lib/definitions";
 
 type ProductListPropTypes = {};
 
 const ProductList = (props: ProductListPropTypes) => {
   const { products, cart } = useAppContext();
 
-  const cartCount = (id: number): number  => {
-    let exists = cart.find(item => item.product.id === id)
+  const cartCount = (id: number): number => {
+    let exists = cart.find((item) => item.product.id === id);
     return exists ? exists.count : 0;
   };
 

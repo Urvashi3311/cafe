@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { useReducer } from "react";
-import { ProductType } from "../lib/definitions";
+import { ProductType } from "@/app/lib/definitions";
 import clsx from "clsx";
-import appReducer from "@/app/reducer";
-import { useAppContext } from "../context";
+import { useAppContext } from "@/app/context";
 
 type ProductPropTypes = {
   detail: ProductType;
@@ -34,26 +32,46 @@ const Product = (props: ProductPropTypes) => {
           height={408}
           sizes="(max-width: 425px) 654px, (max-width: 768px) 427px, 502px"
         />
-        {isInCart ? (
-          <div className="absolute left-1/2 -translate-x-1/2 -mt-5 rounded-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-xs font-semibold whitespace-nowrap">
-            <button onClick={() => handleDecCartItemCount(product.id)}> - </button>
-            {props.count}
-            <button onClick={() => incCartItemCount(product.id)}> + </button>
-          </div>
-        ) : (
-          <button
-            onClick={() => addToCart(product)}
-            className="absolute left-1/2 -translate-x-1/2 -mt-5 rounded-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-xs font-semibold whitespace-nowrap"
-          >
-            <Image
-              src="/icon-add-to-cart.svg"
-              alt="Add to cart"
-              width={21}
-              height={20}
-            />
-            Add to Cart
-          </button>
-        )}
+        {/* <ProductButton isInCart={isInCart} /> */}
+        <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
+          {isInCart ? (
+            <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-xs font-semibold whitespace-nowrap">
+              <button
+                onClick={() => handleDecCartItemCount(product.id)}
+                className="flex justify-center items-center rounded-full size-5 border border-white"
+              >
+                <Image
+                  src="/icon-decrement-quantity.svg"
+                  alt="Decrement Quantity"
+                  width={10}
+                  height={10}
+                />
+              </button>
+              {props.count}
+              <button onClick={() => incCartItemCount(product.id)}>
+                <Image
+                  src="/icon-increment-quantity.svg"
+                  alt="Increment Quantity"
+                  width={21}
+                  height={20}
+                />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => addToCart(product)}
+              className="rounded-full w-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-xs font-semibold whitespace-nowrap"
+            >
+              <Image
+                src="/icon-add-to-cart.svg"
+                alt="Add to cart"
+                width={21}
+                height={20}
+              />
+              Add to Cart
+            </button>
+          )}
+        </div>
       </div>
       <div>
         <span className="text-rose-400 text-xxs">{product.category}</span>

@@ -1,4 +1,4 @@
-import { useAppContext } from "../context"
+import { useAppContext } from "@/app/context"
 
 type CartPropTypes = {
 }
