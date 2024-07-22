@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ProductType } from "@/app/lib/definitions";
 import clsx from "clsx";
 import { useAppContext } from "@/app/context";
+import QuantityButton from "@/app/components/QuantityButton";
 
 type ProductPropTypes = {
   detail: ProductType;
@@ -16,9 +17,9 @@ const Product = (props: ProductPropTypes) => {
 
   const handleDecCartItemCount = (productID: number) => {
     if (props.count === 1) {
-      removeFromCart(product.id);
+      removeFromCart(productID);
     }
-    decCartItemCount(product.id);
+    decCartItemCount(productID);
   };
 
   return (
@@ -32,30 +33,19 @@ const Product = (props: ProductPropTypes) => {
           height={408}
           sizes="(max-width: 425px) 654px, (max-width: 768px) 427px, 502px"
         />
-        {/* <ProductButton isInCart={isInCart} /> */}
         <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
           {isInCart ? (
             <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-xs font-semibold whitespace-nowrap">
-              <button
-                onClick={() => handleDecCartItemCount(product.id)}
-                className="flex justify-center items-center rounded-full size-5 border border-white"
-              >
-                <Image
-                  src="/icon-decrement-quantity.svg"
-                  alt="Decrement Quantity"
-                  width={10}
-                  height={10}
-                />
-              </button>
+              <QuantityButton
+                type="decrement"
+                handleClick={() => handleDecCartItemCount(product.id)}
+              />
+
               {props.count}
-              <button onClick={() => incCartItemCount(product.id)}>
-                <Image
-                  src="/icon-increment-quantity.svg"
-                  alt="Increment Quantity"
-                  width={21}
-                  height={20}
-                />
-              </button>
+              <QuantityButton
+                type="increment"
+                handleClick={() => incCartItemCount(product.id)}
+              />
             </div>
           ) : (
             <button
