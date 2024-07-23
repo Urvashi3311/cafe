@@ -52,7 +52,7 @@ const Cart = (props: CartPropTypes) => {
             This is <b>carbon-neutral</b> delivery
           </div>
 
-          <button className="rounded-full bg-red text-white font-bold p-[13px] w-full">
+          <button className="rounded-full bg-red text-white font-bold p-[13px] w-full transition-all duration-200 hover:bg-rose-950">
             Confirm Order
           </button>
         </>
