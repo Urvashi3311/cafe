@@ -37,7 +37,7 @@ const Cart = (props: CartPropTypes) => {
             ))}
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mb-5">
             <p>Order Total</p>
             <p className="font-bold text-2xl">{getOrderTotal()}</p>
           </div>

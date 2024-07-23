@@ -32,7 +32,7 @@ const ProductActions = ({
   return (
     <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
       {isInCart ? (
-        <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-xs font-semibold whitespace-nowrap">
+        <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-sm font-semibold whitespace-nowrap">
           <Button
             type="decrement"
             handleClick={() => handleDecCartItemCount(product.id)}
@@ -47,7 +47,7 @@ const ProductActions = ({
       ) : (
         <button
           onClick={() => addToCart(product)}
-          className="rounded-full w-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-xs font-semibold whitespace-nowrap"
+          className="rounded-full w-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-sm font-semibold whitespace-nowrap transition-all duration-200 hover:border-red hover:text-red"
         >
           <Image
             src="/icon-add-to-cart.svg"

@@ -40,9 +40,9 @@ const Product = (props: ProductPropTypes) => {
         />
       </div>
       <div>
-        <span className="text-rose-400 text-xxs">{product.category}</span>
-        <h2 className="text-rose-900 text-xs font-semibold">{product.name}</h2>
-        <span className="text-red text-xs font-semibold">{`$${product.price}`}</span>
+        <span className="text-rose-400 text-sm">{product.category}</span>
+        <h2 className="text-rose-900 font-semibold">{product.name}</h2>
+        <span className="text-red font-semibold">{`$${product.price}`}</span>
       </div>
     </div>
   );
