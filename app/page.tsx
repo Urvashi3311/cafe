@@ -1,7 +1,7 @@
 "use client";
 import Cart from "@/app/components/Cart";
 import { AppProvider } from "@/app/context";
-import ProductList from "@/app/components/ProductList";
+import ProductListWrapper from "./components/ProductListWrapper";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
               <h1 className="text-rose-900 mb-10 text-5xl font-bold">
                 Desserts
               </h1>
-              <ProductList />
+              <ProductListWrapper />
             </div>
 
             <aside className="basis-1/3">

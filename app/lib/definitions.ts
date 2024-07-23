@@ -17,7 +17,7 @@ export type CartItemType = {
 }
 
 export interface AppState {
-  products: ProductType[];
+  // products: ProductType[];
   cart: CartItemType[];
 }
 

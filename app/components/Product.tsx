@@ -1,26 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import { ProductType } from "@/app/lib/definitions";
 import clsx from "clsx";
 import { useAppContext } from "@/app/context";
-import Button from "@/app/components/Button";
+import ProductActions from "@/app/components/ProductActions";
 
 type ProductPropTypes = {
   detail: ProductType;
-  count: number;
 };
 
 const Product = (props: ProductPropTypes) => {
   const product = props.detail;
-  const isInCart: boolean = props.count > 0;
-  const { addToCart, decCartItemCount, incCartItemCount, removeFromCart } =
-    useAppContext();
 
-  const handleDecCartItemCount = (productID: number) => {
-    if (props.count === 1) {
-      removeFromCart(productID);
-    }
-    decCartItemCount(productID);
+  const { cart } = useAppContext();
+
+  const cartCount = () => {
+    let exists = cart.find((item) => item.product.id === product.id);
+    return exists ? exists.count : 0;
   };
+
+  const isInCart: boolean = cartCount() > 0;
 
   return (
     <div className="flex flex-col item-center justify-center gap-8">
@@ -33,35 +33,11 @@ const Product = (props: ProductPropTypes) => {
           height={408}
           sizes="(max-width: 425px) 654px, (max-width: 768px) 427px, 502px"
         />
-        <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
-          {isInCart ? (
-            <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-xs font-semibold whitespace-nowrap">
-              <Button
-                type="decrement"
-                handleClick={() => handleDecCartItemCount(product.id)}
-              />
-
-              {props.count}
-              <Button
-                type="increment"
-                handleClick={() => incCartItemCount(product.id)}
-              />
-            </div>
-          ) : (
-            <button
-              onClick={() => addToCart(product)}
-              className="rounded-full w-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-xs font-semibold whitespace-nowrap"
-            >
-              <Image
-                src="/icon-add-to-cart.svg"
-                alt="Add to cart"
-                width={21}
-                height={20}
-              />
-              Add to Cart
-            </button>
-          )}
-        </div>
+        <ProductActions
+          isInCart={isInCart}
+          product={product}
+          cartCount={cartCount()}
+        />
       </div>
       <div>
         <span className="text-rose-400 text-xxs">{product.category}</span>

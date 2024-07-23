@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+
 import { CartItemType } from "../lib/definitions";
 import Button from "./Button";
 import { useAppContext } from "../context";

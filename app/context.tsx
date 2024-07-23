@@ -1,15 +1,15 @@
+'use client'
 import { createContext, useContext, useReducer, ReactNode } from "react";
 import { products, cart } from "@/app/lib/data";
 import {
   AppContextType,
   AppState,
   ProductType,
-  Action,
 } from "@/app/lib/definitions";
 import appReducer from "@/app/reducer";
 
 const defaultValue: AppState = {
-  products: products,
+  // products: products,
   cart: cart,
 };
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { useAppContext } from "@/app/context";
 import CartItem from "@/app/components/CartItem";
 import { CartItemType } from "../lib/definitions";
@@ -35,7 +37,7 @@ const Cart = (props: CartPropTypes) => {
             ))}
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <p>Order Total</p>
             <p className="font-bold text-2xl">{getOrderTotal()}</p>
           </div>
