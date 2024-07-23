@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${redHatText.className} text-base text-rose-900 bg-rose-100`}>{children}</body>
+      <body className={`${redHatText.className} text-base text-rose-900 bg-rose-100 relative`}>{children}</body>
     </html>
   );
 }

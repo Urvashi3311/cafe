@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { PlusIcon, MinusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 // TODO: add default to classes

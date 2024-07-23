@@ -15,7 +15,6 @@ const ProductActions = ({
   product,
 }: ProductActionsType) => {
   const {
-    cart,
     addToCart,
     decCartItemCount,
     incCartItemCount,
