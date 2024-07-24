@@ -6,6 +6,9 @@
   .no-scroll {
     overflow: hidden;
   }
+  .bottom-unset {
+    bottom: unset;
+  }
 }
 
 /* footer */

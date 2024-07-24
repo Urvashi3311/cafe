@@ -33,16 +33,20 @@ const Modal = ({ children, isOpen, setIsOpen }: ModalProps) => {
   return (
     <>
       <div
+      id="modal-overlay"
         className={`${
           isOpen ? "block" : "hidden"
-        } modal-overlay bg-black/50 fixed inset-0 z-10`}
+        } bg-black/50 fixed inset-0 z-10`}
       ></div>
 
       <div
         ref={modalRef}
+        id="modal-container"
         className={`${
           isOpen ? "block" : "hidden"
-        } modal-container bg-white dark:bg-gray-dark shadow-md rounded-t-xl md:rounded-xl p-7 z-[1000] fixed w-full md:w-3/4 md:max-h-2/3 lg:w-2/3  md:top-1/2 left-1/2 bottom-0 md:-translate-y-1/2 -translate-x-1/2 overflow-auto`}
+        }  bg-white dark:bg-gray-dark shadow-md rounded-t-xl md:rounded-xl p-7 z-[1000] w-[100%] md:w-[600px] overflow-auto
+        fixed bottom-0 md:bottom-unset left-[50%] md:top-[50%] -translate-x-1/2 md:-translate-y-1/2 max-h-[90%] md:max-h-[80%]
+        `}
       >
         {/* <button className="btn" onClick={() => onCloseHandler()}>
           <XMarkIcon className="size-4 " />
