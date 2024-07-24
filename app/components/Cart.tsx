@@ -15,8 +15,8 @@ const Cart = (props: CartPropTypes) => {
 
   return (
     <>
-      <div className="bg-white rounded-[10px] py-8 px-6">
-        <h2 className="text-red text-3xl mb-9 font-bold">
+      <div className="bg-white rounded-[10px] py-6 lg:py-8 px-4 lg:px-6">
+        <h2 className="text-red text-2xl lg:text-3xl mb-4 lg:mb-9 font-bold">
           Your Cart ( {getTotalCount()} )
         </h2>
 
@@ -33,14 +33,14 @@ const Cart = (props: CartPropTypes) => {
               <p className="font-bold text-2xl">${getOrderTotal()}</p>
             </div>
 
-            <div className="bg-rose-100 rounded-md p-[14px] flex justify-center items-center gap-2 text-sm mb-5">
+            <div className="bg-rose-100 rounded-md p-3 lg:p-4 flex justify-center items-center gap-2 text-sm mb-5">
               <Image
                 src="/icon-carbon-neutral.svg"
                 alt="Carbon neutral delivary"
                 width={21}
                 height={20}
               />
-              This is <b>carbon-neutral</b> delivery
+              <p>This is <b>carbon-neutral</b> delivery</p>
             </div>
 
             <button
