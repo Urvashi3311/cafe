@@ -24,7 +24,7 @@ const ProductActions = ({
     decCartItemCount(productID);
   };
   return (
-    <>
+    <div className="min-w-[165px] min-h[45px]">
       {isInCart ? (
         <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-sm font-semibold whitespace-nowrap">
           <Button
@@ -52,7 +52,7 @@ const ProductActions = ({
           Add to Cart
         </button>
       )}
-    </>
+    </div>
   );
 };
 

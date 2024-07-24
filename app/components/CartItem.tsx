@@ -15,7 +15,7 @@ const CartItem = (props: CartItemProps) => {
   return (
     <div className="flex justify-between items-center border-b border-rose-100 py-3">
       <div className="flex flex-col gap-2">
-        <p className="text-sm font-bold">{item.product.name}</p>
+        <h3 className="text-sm font-bold">{item.product.name}</h3>
         <div className="text-sm">
           <span className="mr-4 text-red font-semibold">{item.count}x</span>
           <span className="mr-2 text-rose-300">@ ${item.product.price}</span>

@@ -65,7 +65,7 @@ const Product = (props: ProductPropTypes) => {
           />
         </picture>
 
-        <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2  -bottom-5">
+        <div className="absolute left-1/2 -translate-x-1/2  -bottom-5">
           <ProductActions
             isInCart={isInCart}
             product={product}
@@ -76,7 +76,7 @@ const Product = (props: ProductPropTypes) => {
 
       <div>
         <span className="text-rose-400 text-sm">{product.category}</span>
-        <h2 className="text-rose-900 font-semibold">{product.name}</h2>
+        <h3 className="text-rose-900 font-semibold">{product.name}</h3>
         <span className="text-red font-semibold">{`$${product.price}`}</span>
       </div>
     </div>
