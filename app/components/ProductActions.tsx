@@ -45,7 +45,7 @@ const ProductActions = ({
         >
           <Image
             src="/icon-add-to-cart.svg"
-            alt="Add to cart"
+            alt=""
             width={21}
             height={20}
           />
