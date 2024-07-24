@@ -42,11 +42,11 @@ const Modal = ({ children, isOpen, setIsOpen }: ModalProps) => {
         ref={modalRef}
         className={`${
           isOpen ? "block" : "hidden"
-        } modal-container bg-white dark:bg-gray-dark shadow-md w-1/3 rounded-md p-4 z-[1000] fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2`}
+        } modal-container bg-white dark:bg-gray-dark shadow-md w-1/3 rounded-xl p-7 z-[1000] fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2`}
       >
-        <button className="btn" onClick={() => onCloseHandler()}>
+        {/* <button className="btn" onClick={() => onCloseHandler()}>
           <XMarkIcon className="size-4 " />
-        </button>
+        </button> */}
 
         <div className="min-h-20">{children}</div>
       </div>

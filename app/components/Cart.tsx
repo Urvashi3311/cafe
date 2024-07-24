@@ -6,25 +6,13 @@ import { CartItemType } from "../lib/definitions";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "@/app/components/Modal";
+import Order from "@/app/components/Order";
 
 type CartPropTypes = {};
 
 const Cart = (props: CartPropTypes) => {
-  const { cart } = useAppContext();
+  const { cart, getTotalCount, getRowTotal, getOrderTotal } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
-
-  const getTotalCount = () => {
-    return cart.reduce((total, item) => total + item.count, 0);
-  };
-  const getRowTotal = (item: CartItemType) => {
-    return item.product.price * item.count;
-  };
-  const getOrderTotal = () => {
-    return cart.reduce(
-      (cartTotal, cartItem) => cartTotal + getRowTotal(cartItem),
-      0
-    );
-  };
 
   return (
     <>
@@ -58,7 +46,7 @@ const Cart = (props: CartPropTypes) => {
 
             <button
               onClick={() => setOpenModal(true)}
-              className="rounded-full bg-red text-white font-bold p-[13px] w-full transition-all duration-200 hover:bg-rose-950"
+              className="rounded-full bg-red text-white font-semibold p-[13px] w-full transition-all duration-200 hover:bg-rose-950"
             >
               Confirm Order
             </button>
@@ -79,7 +67,7 @@ const Cart = (props: CartPropTypes) => {
       </div>
 
       <Modal isOpen={openModal} setIsOpen={setOpenModal}>
-        {"hi"}
+        <Order setIsOpen={setOpenModal} />
       </Modal>
     </>
   );

@@ -5,6 +5,7 @@ import {
   AppContextType,
   AppState,
   ProductType,
+  CartItemType
 } from "@/app/lib/definitions";
 import appReducer from "@/app/reducer";
 
@@ -35,6 +36,24 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: productId });
   };
 
+  const getTotalCount = () => {
+    return state.cart.reduce((total, item) => total + item.count, 0);
+  };
+
+  const getRowTotal = (item: CartItemType) => {
+    return item.product.price * item.count;
+  };
+
+  const getOrderTotal = () => {
+    return state.cart.reduce(
+      (cartTotal, cartItem) => cartTotal + getRowTotal(cartItem),
+      0
+    );
+  };
+
+  const emptyCart = ()=> {
+    dispatch({type: "EMPTY_CART"})
+  }
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +62,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         removeFromCart,
         incCartItemCount,
         decCartItemCount,
+        getTotalCount,
+        getRowTotal,
+        getOrderTotal,
+        emptyCart
       }}
     >
       {children}

@@ -26,6 +26,10 @@ export interface AppContextType extends AppState {
   removeFromCart: (productId: number) => void;
   incCartItemCount: (productId: number) => void;
   decCartItemCount: (productId: number) => void;
+  getTotalCount: () => number;
+  getRowTotal: (item: CartItemType) => number;
+  getOrderTotal: () => number
+  emptyCart: () => void
 }
 
 export interface Action {

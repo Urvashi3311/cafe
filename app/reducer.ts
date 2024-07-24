@@ -1,7 +1,4 @@
-import {
-  AppState,
-  Action,
-} from "@/app/lib/definitions";
+import { AppState, Action } from "@/app/lib/definitions";
 
 const appReducer = (state: AppState, action: Action): AppState => {
   switch (action.type) {
@@ -19,9 +16,11 @@ const appReducer = (state: AppState, action: Action): AppState => {
     case "REMOVE_FROM_CART":
       return {
         ...state,
-        cart: state.cart.filter(cartItem => cartItem.product.id !== action.payload),
+        cart: state.cart.filter(
+          (cartItem) => cartItem.product.id !== action.payload
+        ),
       };
-    case 'INCREAMENT_COUNT':
+    case "INCREAMENT_COUNT":
       const existingProductIndex = state.cart.findIndex(
         (cartItem) => cartItem.product.id === action.payload
       );
@@ -39,24 +38,29 @@ const appReducer = (state: AppState, action: Action): AppState => {
         ...state,
         cart: updatedCart,
       };
-      case 'DECREAMENT_COUNT':
-        const existingProductIndex2 = state.cart.findIndex(
-          (cartItem) => cartItem.product.id === action.payload
-        );
-        const updatedCart2 = state.cart.map((item, index) => {
-          if (index === existingProductIndex2) {
-            return {
-              ...item,
-              count: item.count - 1,
-            };
-          }
-          return item;
-        });
-  
-        return {
-          ...state,
-          cart: updatedCart2,
-        };
+    case "DECREAMENT_COUNT":
+      const existingProductIndex2 = state.cart.findIndex(
+        (cartItem) => cartItem.product.id === action.payload
+      );
+      const updatedCart2 = state.cart.map((item, index) => {
+        if (index === existingProductIndex2) {
+          return {
+            ...item,
+            count: item.count - 1,
+          };
+        }
+        return item;
+      });
+
+      return {
+        ...state,
+        cart: updatedCart2,
+      };
+    case "EMPTY_CART":
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }
