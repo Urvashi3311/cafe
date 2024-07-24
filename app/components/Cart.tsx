@@ -30,7 +30,7 @@ const Cart = (props: CartPropTypes) => {
 
             <div className="flex justify-between items-center mb-5">
               <p>Order Total</p>
-              <p className="font-bold text-2xl">{getOrderTotal()}</p>
+              <p className="font-bold text-2xl">${getOrderTotal()}</p>
             </div>
 
             <div className="bg-rose-100 rounded-md p-[14px] flex justify-center items-center gap-2 text-sm mb-5">

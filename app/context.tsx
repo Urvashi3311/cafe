@@ -1,16 +1,15 @@
-'use client'
+"use client";
 import { createContext, useContext, useReducer, ReactNode } from "react";
-import { products, cart } from "@/app/lib/data";
+import { cart } from "@/app/lib/data";
 import {
   AppContextType,
   AppState,
   ProductType,
-  CartItemType
+  CartItemType,
 } from "@/app/lib/definitions";
 import appReducer from "@/app/reducer";
 
 const defaultValue: AppState = {
-  // products: products,
   cart: cart,
 };
 
@@ -51,9 +50,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  const emptyCart = ()=> {
-    dispatch({type: "EMPTY_CART"})
-  }
+  const emptyCart = () => {
+    dispatch({ type: "EMPTY_CART" });
+  };
   return (
     <AppContext.Provider
       value={{
@@ -65,7 +64,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         getTotalCount,
         getRowTotal,
         getOrderTotal,
-        emptyCart
+        emptyCart,
       }}
     >
       {children}
