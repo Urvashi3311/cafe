@@ -36,7 +36,7 @@ const Cart = (props: CartPropTypes) => {
             <div className="bg-rose-100 rounded-md p-3 lg:p-4 flex justify-center items-center gap-2 text-sm mb-5">
               <Image
                 src="/icon-carbon-neutral.svg"
-                alt="Carbon neutral delivary"
+                alt=""
                 width={21}
                 height={20}
               />
@@ -54,7 +54,7 @@ const Cart = (props: CartPropTypes) => {
           <div className="flex flex-col items-center justify-center py-8">
             <Image
               src="/illustration-empty-cart.svg"
-              alt="Empty Cart"
+              alt=""
               width={128}
               height={128}
             />

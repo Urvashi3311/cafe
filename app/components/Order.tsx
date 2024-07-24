@@ -19,7 +19,7 @@ const Order = ({ setIsOpen }: OrderProps) => {
     <div>
       <Image
         src="/icon-order-confirmed.svg"
-        alt="Order confirmed icon"
+        alt=" "
         width={40}
         height={40}
       />
