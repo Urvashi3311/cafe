@@ -1,7 +1,7 @@
 "use client";
 import Cart from "@/app/components/Cart";
 import { AppProvider } from "@/app/context";
-import ProductListWrapper from "./components/ProductListWrapper";
+import ProductListWrapper from "@/app/components/ProductListWrapper";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
         </main>
 
         <div className="attribution" role="contentinfo">
-          Challenge by {" "}
+          Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge">
             Frontend Mentor
           </a>

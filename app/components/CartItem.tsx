@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { CartItemType } from "../lib/definitions";
-import Button from "./Button";
-import { useAppContext } from "../context";
+import { CartItemType } from "@/app/lib/definitions";
+import Button from "@/app/components/Button";
+import { useAppContext } from "@/app/context";
 
 type CartItemProps = {
   item: CartItemType;

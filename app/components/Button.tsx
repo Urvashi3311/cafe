@@ -2,7 +2,6 @@
 
 import { PlusIcon, MinusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-// TODO: add default to classes
 type ButtonProps = {
   handleClick: () => void;
   type: "increment" | "decrement" | "remove";
@@ -21,7 +20,7 @@ const iconMap = {
   ),
 };
 
-const Button = ({ handleClick, type, classes }: ButtonProps) => {
+const Button = ({ handleClick, type, classes = "" }: ButtonProps) => {
   return (
     <button
       onClick={handleClick}

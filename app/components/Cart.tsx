@@ -2,7 +2,6 @@
 
 import { useAppContext } from "@/app/context";
 import CartItem from "@/app/components/CartItem";
-import { CartItemType } from "../lib/definitions";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "@/app/components/Modal";
@@ -11,7 +10,7 @@ import Order from "@/app/components/Order";
 type CartPropTypes = {};
 
 const Cart = (props: CartPropTypes) => {
-  const { cart, getTotalCount, getRowTotal, getOrderTotal } = useAppContext();
+  const { cart, getTotalCount, getOrderTotal } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
 
   return (

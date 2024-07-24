@@ -1,5 +1,5 @@
-import { ProductType } from './definitions';
-import { products } from './data';
+import { ProductType } from "@/app/lib/definitions";
+import { products } from "@/app/lib/data";
 
 export const fetchProducts = async (): Promise<ProductType[]> => {
   return new Promise((resolve) => {

@@ -1,5 +1,3 @@
-// "use client";
-// import { useAppContext } from "@/app/context";
 import Product from "@/app/components/Product";
 import { ProductType } from "@/app/lib/definitions";
 

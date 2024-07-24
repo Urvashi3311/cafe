@@ -1,6 +1,6 @@
 import { useRef, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
 import useOutsideClick from "@/app/hooks/useOutsideClick";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+// import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface ModalProps {
   children: ReactNode;

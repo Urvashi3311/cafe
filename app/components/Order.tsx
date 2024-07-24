@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-import { useAppContext } from "../context";
+import { useAppContext } from "@/app/context";
 import OrderItem from "@/app/components/OrderItem";
 
 interface OrderProps {
@@ -16,7 +16,7 @@ const Order = ({ setIsOpen }: OrderProps) => {
   };
 
   return (
-    <div className="">
+    <div>
       <Image
         src="/icon-order-confirmed.svg"
         alt="Order confirmed icon"
@@ -37,11 +37,11 @@ const Order = ({ setIsOpen }: OrderProps) => {
         </div>
       </div>
       <button
-          onClick={handleNewOrder}
-          className="rounded-full bg-red text-white font-semibold p-[13px] w-full transition-all duration-200 hover:bg-rose-950"
-        >
-          Start New Order
-        </button>
+        onClick={handleNewOrder}
+        className="rounded-full bg-red text-white font-semibold p-[13px] w-full transition-all duration-200 hover:bg-rose-950"
+      >
+        Start New Order
+      </button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "@/app/components/Button";
 import { useAppContext } from "@/app/context";
-import { ProductType } from "../lib/definitions";
+import { ProductType } from "@/app/lib/definitions";
 
 type ProductActionsType = {
   isInCart: boolean;
@@ -14,12 +14,8 @@ const ProductActions = ({
   cartCount,
   product,
 }: ProductActionsType) => {
-  const {
-    addToCart,
-    decCartItemCount,
-    incCartItemCount,
-    removeFromCart,
-  } = useAppContext();
+  const { addToCart, decCartItemCount, incCartItemCount, removeFromCart } =
+    useAppContext();
 
   const handleDecCartItemCount = (productID: number) => {
     if (cartCount === 1) {
@@ -27,7 +23,7 @@ const ProductActions = ({
     }
     decCartItemCount(productID);
   };
-  
+
   return (
     <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
       {isInCart ? (

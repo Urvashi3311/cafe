@@ -111,33 +111,33 @@ export const products = [
 
 
 export const cart = [
-  {
-    product:   {
-      id: 9,
-      image: {
-        thumbnail: "/image-panna-cotta-thumbnail.jpg",
-        mobile: "/image-panna-cotta-mobile.jpg",
-        tablet: "/image-panna-cotta-tablet.jpg",
-        desktop: "/image-panna-cotta-desktop.jpg",
-      },
-      name: "Vanilla Panna Cotta",
-      category: "Panna Cotta",
-      price: 6.5,
-    },
-    count: 2
-  }, {
-    product:   {
-      id: 5,
-      image: {
-        thumbnail: "/image-baklava-thumbnail.jpg",
-        mobile: "/image-baklava-mobile.jpg",
-        tablet: "/image-baklava-tablet.jpg",
-        desktop: "/image-baklava-desktop.jpg",
-      },
-      name: "Pistachio Baklava",
-      category: "Baklava",
-      price: 4.0,
-    },
-    count: 3
-  }
+  // {
+  //   product:   {
+  //     id: 9,
+  //     image: {
+  //       thumbnail: "/image-panna-cotta-thumbnail.jpg",
+  //       mobile: "/image-panna-cotta-mobile.jpg",
+  //       tablet: "/image-panna-cotta-tablet.jpg",
+  //       desktop: "/image-panna-cotta-desktop.jpg",
+  //     },
+  //     name: "Vanilla Panna Cotta",
+  //     category: "Panna Cotta",
+  //     price: 6.5,
+  //   },
+  //   count: 2
+  // }, {
+  //   product:   {
+  //     id: 5,
+  //     image: {
+  //       thumbnail: "/image-baklava-thumbnail.jpg",
+  //       mobile: "/image-baklava-mobile.jpg",
+  //       tablet: "/image-baklava-tablet.jpg",
+  //       desktop: "/image-baklava-desktop.jpg",
+  //     },
+  //     name: "Pistachio Baklava",
+  //     category: "Baklava",
+  //     price: 4.0,
+  //   },
+  //   count: 3
+  // }
 ]
