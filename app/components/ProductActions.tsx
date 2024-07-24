@@ -23,9 +23,9 @@ const ProductActions = ({
     }
     decCartItemCount(productID);
   };
-
+  //TODO: move the positionnig out of this component
   return (
-    <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2 -mt-5 ">
+    <div className="min-w-[165px] min-h[45px] absolute left-1/2 -translate-x-1/2  -bottom-5">
       {isInCart ? (
         <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-sm font-semibold whitespace-nowrap">
           <Button
