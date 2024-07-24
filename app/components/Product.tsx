@@ -25,8 +25,9 @@ const Product = (props: ProductPropTypes) => {
   return (
     <div className="flex flex-col item-center justify-center gap-8">
       <div className="relative">
+        {/* TODO: Display image based on item.image */}
         <Image
-          className={clsx("rounded-xl", { "border-red border-2": isInCart })}
+          className={clsx("rounded-xl border-transparent border-2", { "!border-red ": isInCart })}
           src={product.image.desktop}
           alt={product.name}
           width={502}

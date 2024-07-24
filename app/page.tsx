@@ -7,12 +7,9 @@ export default function Home() {
   return (
     <>
       <AppProvider>
-        <main className="container py-[95px]">
-          <div className="flex gap-9">
+        <main className="container px-4 py-[95px]">
+          <div className="flex flex-col md:flex-row gap-9">
             <div className="basis-2/3">
-              <h1 className="text-rose-900 mb-10 text-5xl font-bold">
-                Desserts
-              </h1>
               <ProductListWrapper />
             </div>
 
