@@ -6,7 +6,7 @@ export default function ProductListWrapper() {
   // const products = await fetchProducts();
   return (
     <>
-      <h1 className="text-rose-900 mb-7 md:mb-10 text-4xl md:text-5xl font-bold">Desserts</h1>
+      <h1 className="text-rose-900 mb-6 md:mb-10 text-3xl md:text-[40px] font-bold">Desserts</h1>
       <ProductList products={products} />
     </>
   );

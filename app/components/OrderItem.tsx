@@ -21,7 +21,7 @@ const OrderItem = (props: CartItemProps) => {
       />
       <div className="flex justify-between items-center w-full">
         <div className="flex flex-col gap-2">
-          <p className="text-sm font-bold">{item.product.name}</p>
+          <h3 className="text-sm font-bold">{item.product.name}</h3>
           <div className="text-sm">
             <span className="mr-4 text-red font-semibold">{item.count}x</span>
             <span className="mr-2 text-rose-300">@ ${item.product.price}</span>

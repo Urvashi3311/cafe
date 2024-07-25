@@ -23,7 +23,7 @@ const Order = ({ setIsOpen }: OrderProps) => {
         width={40}
         height={40}
       />
-      <h1 className="text-4xl font-bold my-5">Order Confirmed</h1>
+      <h2 className="text-4xl font-bold my-5">Order Confirmed</h2>
       <p className="mb-6 text-rose-300">We hope enjoy your food!</p>
 
       <div className="flex flex-col p-5 bg-rose-50 rounded-lg mb-7">

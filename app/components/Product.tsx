@@ -58,6 +58,7 @@ const Product = (props: ProductPropTypes) => {
           <source media="(min-width: 320px)" srcSet={mobile} />
           <img
             {...rest}
+            alt={product.name}
             className={clsx(
               "object-cover rounded-xl border-transparent border-2",
               { "!border-red ": isInCart }
