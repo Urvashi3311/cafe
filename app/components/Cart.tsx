@@ -7,6 +7,7 @@ import { useState } from "react";
 import Modal from "@/app/components/Modal";
 import Order from "@/app/components/Order";
 import { formatDollar } from "@/app/utils";
+import { AnimatePresence } from "framer-motion";
 
 type CartPropTypes = {};
 
@@ -16,7 +17,7 @@ const Cart = (props: CartPropTypes) => {
 
   return (
     <>
-      <div className="bg-white rounded-[10px] py-6 lg:py-8 px-4 lg:px-6">
+      <div className="bg-white rounded-[10px] p-4 lg:p-6">
         <h2 className="text-red text-2xl lg:text-2xl mb-4 lg:mb-6 font-bold">
           Your Cart ({getTotalQuantity()})
         </h2>
@@ -24,14 +25,18 @@ const Cart = (props: CartPropTypes) => {
         {getOrderTotal() > 0 ? (
           <>
             <div className="mb-5">
-              {cart.map((item, index) => (
-                <CartItem item={item} key={index} />
-              ))}
+              <AnimatePresence>
+                {cart.map((item) => (
+                  <CartItem item={item} key={item.product.id} />
+                ))}
+              </AnimatePresence>
             </div>
 
             <div className="flex justify-between items-center mb-5">
               <p>Order Total</p>
-              <p className="font-bold text-2xl">{formatDollar(getOrderTotal())}</p>
+              <p className="font-bold text-2xl">
+                {formatDollar(getOrderTotal())}
+              </p>
             </div>
 
             <div className="bg-rose-100 rounded-md p-3 lg:p-4 flex justify-center items-center gap-2 text-sm mb-5">
@@ -41,7 +46,9 @@ const Cart = (props: CartPropTypes) => {
                 width={21}
                 height={20}
               />
-              <p>This is <b>carbon-neutral</b> delivery</p>
+              <p>
+                This is <b>carbon-neutral</b> delivery
+              </p>
             </div>
 
             <button

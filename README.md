@@ -67,6 +67,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 - Mobile-first workflow
 - Typescript
 - Tailwindcss
+- Hero icons
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 

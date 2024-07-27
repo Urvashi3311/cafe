@@ -24,7 +24,7 @@ const Order = ({ setIsOpen }: OrderProps) => {
 
       <div className="flex flex-col p-5 bg-rose-50 rounded-lg mb-7">
         {cart.map((item, index) => (
-          <OrderItem item={item} key={index} />
+          <OrderItem item={item} key={item.product.id} />
         ))}
 
         <div className="flex items-center justify-between">
