@@ -13,7 +13,7 @@ export type ProductType = {
 
 export type CartItemType = {
   product: ProductType,
-  count: number
+  quantity: number
 }
 
 export interface AppState {

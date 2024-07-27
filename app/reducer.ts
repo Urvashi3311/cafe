@@ -9,7 +9,7 @@ const appReducer = (state: AppState, action: Action): AppState => {
           ...state.cart,
           {
             product: action.payload,
-            count: 1,
+            quantity: 1,
           },
         ],
       };
@@ -28,7 +28,7 @@ const appReducer = (state: AppState, action: Action): AppState => {
         if (index === existingProductIndex) {
           return {
             ...item,
-            count: item.count + 1,
+            quantity: item.quantity + 1,
           };
         }
         return item;
@@ -46,7 +46,7 @@ const appReducer = (state: AppState, action: Action): AppState => {
         if (index === existingProductIndex2) {
           return {
             ...item,
-            count: item.count - 1,
+            quantity: item.quantity - 1,
           };
         }
         return item;

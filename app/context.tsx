@@ -36,11 +36,11 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const getTotalCount = () => {
-    return state.cart.reduce((total, item) => total + item.count, 0);
+    return state.cart.reduce((total, item) => total + item.quantity, 0);
   };
 
   const getRowTotal = (item: CartItemType) => {
-    return item.product.price * item.count;
+    return item.product.price * item.quantity;
   };
 
   const getOrderTotal = () => {

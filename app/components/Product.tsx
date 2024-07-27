@@ -18,7 +18,7 @@ const Product = (props: ProductPropTypes) => {
 
   const cartCount = () => {
     let exists = cart.find((item) => item.product.id === product.id);
-    return exists ? exists.count : 0;
+    return exists ? exists.quantity : 0;
   };
 
   const isInCart: boolean = cartCount() > 0;

@@ -12,13 +12,13 @@ type CartItemProps = {
 const CartItem = (props: CartItemProps) => {
   const item = props.item;
   const { removeFromCart } = useAppContext();
-  const cartItemTotal = item.count * item.product.price;
+  const cartItemTotal = item.quantity * item.product.price;
   return (
     <div className="flex justify-between items-center border-b border-rose-100 py-3">
       <div className="flex flex-col gap-2">
         <h3 className="text-sm font-bold">{item.product.name}</h3>
         <div className="text-sm">
-          <span className="mr-4 text-red font-semibold">{item.count}x</span>
+          <span className="mr-4 text-red font-semibold">{item.quantity}x</span>
           <span className="mr-2 text-rose-300">
             @ {formatDollar(item.product.price)}
           </span>

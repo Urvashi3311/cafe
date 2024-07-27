@@ -124,7 +124,7 @@ export const cart = [
   //     category: "Panna Cotta",
   //     price: 6.5,
   //   },
-  //   count: 2
+  //   quantity: 2
   // }, {
   //   product:   {
   //     id: 5,
@@ -138,6 +138,6 @@ export const cart = [
   //     category: "Baklava",
   //     price: 4.0,
   //   },
-  //   count: 3
+  //   quantity: 3
   // }
 ]
