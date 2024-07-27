@@ -16,12 +16,12 @@ const Product = (props: ProductPropTypes) => {
 
   const { cart } = useAppContext();
 
-  const cartCount = () => {
+  const getQuantity = () => {
     let exists = cart.find((item) => item.product.id === product.id);
     return exists ? exists.quantity : 0;
   };
 
-  const isInCart: boolean = cartCount() > 0;
+  const isInCart: boolean = getQuantity() > 0;
 
   const common = {
     alt: product.name,
@@ -71,7 +71,7 @@ const Product = (props: ProductPropTypes) => {
           <ProductActions
             isInCart={isInCart}
             product={product}
-            cartCount={cartCount()}
+            quantity={getQuantity()}
           />
         </div>
       </div>

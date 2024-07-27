@@ -11,14 +11,14 @@ import { formatDollar } from "@/app/utils";
 type CartPropTypes = {};
 
 const Cart = (props: CartPropTypes) => {
-  const { cart, getTotalCount, getOrderTotal } = useAppContext();
+  const { cart, getTotalQuantity, getOrderTotal } = useAppContext();
   const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
       <div className="bg-white rounded-[10px] py-6 lg:py-8 px-4 lg:px-6">
         <h2 className="text-red text-2xl lg:text-2xl mb-4 lg:mb-6 font-bold">
-          Your Cart ( {getTotalCount()} )
+          Your Cart ( {getTotalQuantity()} )
         </h2>
 
         {getOrderTotal() > 0 ? (

@@ -24,18 +24,18 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
-  const incCartItemCount = (productId: number) => {
-    dispatch({ type: "INCREAMENT_COUNT", payload: productId });
+  const incCartItem = (productId: number) => {
+    dispatch({ type: "INCREAMENT_QUANTITY", payload: productId });
   };
-  const decCartItemCount = (productId: number) => {
-    dispatch({ type: "DECREAMENT_COUNT", payload: productId });
+  const decCartItem = (productId: number) => {
+    dispatch({ type: "DECREAMENT_QUANTITY", payload: productId });
   };
 
   const removeFromCart = (productId: number) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: productId });
   };
 
-  const getTotalCount = () => {
+  const getTotalQuantity = () => {
     return state.cart.reduce((total, item) => total + item.quantity, 0);
   };
 
@@ -59,9 +59,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         ...state,
         addToCart,
         removeFromCart,
-        incCartItemCount,
-        decCartItemCount,
-        getTotalCount,
+        incCartItem,
+        decCartItem,
+        getTotalQuantity,
         getRowTotal,
         getOrderTotal,
         emptyCart,

@@ -20,7 +20,7 @@ const appReducer = (state: AppState, action: Action): AppState => {
           (cartItem) => cartItem.product.id !== action.payload
         ),
       };
-    case "INCREAMENT_COUNT":
+    case "INCREAMENT_QUANTITY":
       const existingProductIndex = state.cart.findIndex(
         (cartItem) => cartItem.product.id === action.payload
       );
@@ -38,7 +38,7 @@ const appReducer = (state: AppState, action: Action): AppState => {
         ...state,
         cart: updatedCart,
       };
-    case "DECREAMENT_COUNT":
+    case "DECREAMENT_QUANTITY":
       const existingProductIndex2 = state.cart.findIndex(
         (cartItem) => cartItem.product.id === action.payload
       );

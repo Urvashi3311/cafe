@@ -17,16 +17,15 @@ export type CartItemType = {
 }
 
 export interface AppState {
-  // products: ProductType[];
   cart: CartItemType[];
 }
 
 export interface AppContextType extends AppState {
   addToCart: (product: ProductType) => void;
   removeFromCart: (productId: number) => void;
-  incCartItemCount: (productId: number) => void;
-  decCartItemCount: (productId: number) => void;
-  getTotalCount: () => number;
+  incCartItem: (productId: number) => void;
+  decCartItem: (productId: number) => void;
+  getTotalQuantity: () => number;
   getRowTotal: (item: CartItemType) => number;
   getOrderTotal: () => number
   emptyCart: () => void

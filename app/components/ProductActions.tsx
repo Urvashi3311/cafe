@@ -5,23 +5,23 @@ import { ProductType } from "@/app/lib/definitions";
 
 type ProductActionsType = {
   isInCart: boolean;
-  cartCount: number;
+  quantity: number;
   product: ProductType;
 };
 
 const ProductActions = ({
   isInCart,
-  cartCount,
+  quantity,
   product,
 }: ProductActionsType) => {
-  const { addToCart, decCartItemCount, incCartItemCount, removeFromCart } =
+  const { addToCart, decCartItem, incCartItem, removeFromCart } =
     useAppContext();
 
-  const handleDecCartItemCount = (productID: number) => {
-    if (cartCount === 1) {
+  const handleDecCartItem = (productID: number) => {
+    if (quantity === 1) {
       removeFromCart(productID);
     }
-    decCartItemCount(productID);
+    decCartItem(productID);
   };
   return (
     <div className="min-w-[165px] min-h[45px]">
@@ -29,13 +29,13 @@ const ProductActions = ({
         <div className="rounded-full bg-red border border-red text-white py-3 px-6 flex justify-between items-center text-sm font-semibold whitespace-nowrap">
           <Button
             type="decrement"
-            handleClick={() => handleDecCartItemCount(product.id)}
+            handleClick={() => handleDecCartItem(product.id)}
           />
 
-          {cartCount}
+          {quantity}
           <Button
             type="increment"
-            handleClick={() => incCartItemCount(product.id)}
+            handleClick={() => incCartItem(product.id)}
           />
         </div>
       ) : (
@@ -43,12 +43,7 @@ const ProductActions = ({
           onClick={() => addToCart(product)}
           className="rounded-full w-full bg-rose-50 border border-rose-300 py-3 px-6 flex gap-1 justify-center items-center text-sm font-semibold whitespace-nowrap transition-all duration-200 hover:border-red hover:text-red"
         >
-          <Image
-            src="/icon-add-to-cart.svg"
-            alt=""
-            width={21}
-            height={20}
-          />
+          <Image src="/icon-add-to-cart.svg" alt="" width={21} height={20} />
           Add to Cart
         </button>
       )}
