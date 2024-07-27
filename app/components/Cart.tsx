@@ -18,7 +18,7 @@ const Cart = (props: CartPropTypes) => {
     <>
       <div className="bg-white rounded-[10px] py-6 lg:py-8 px-4 lg:px-6">
         <h2 className="text-red text-2xl lg:text-2xl mb-4 lg:mb-6 font-bold">
-          Your Cart ( {getTotalQuantity()} )
+          Your Cart ({getTotalQuantity()})
         </h2>
 
         {getOrderTotal() > 0 ? (
