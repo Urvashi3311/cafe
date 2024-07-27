@@ -125,7 +125,8 @@ export const cart = [
   //     price: 6.5,
   //   },
   //   quantity: 2
-  // }, {
+  // }, 
+  // {
   //   product:   {
   //     id: 5,
   //     image: {

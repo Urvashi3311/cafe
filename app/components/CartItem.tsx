@@ -4,7 +4,8 @@ import { CartItemType } from "@/app/lib/definitions";
 import Button from "@/app/components/Button";
 import { useAppContext } from "@/app/context";
 import { formatDollar } from "@/app/utils";
-import { motion } from "framer-motion";
+import { motion, useIsPresent } from "framer-motion";
+import { useEffect } from "react";
 
 type CartItemProps = {
   item: CartItemType;
@@ -14,13 +15,30 @@ const CartItem = (props: CartItemProps) => {
   const item = props.item;
   const { removeFromCart } = useAppContext();
   const cartItemTotal = item.quantity * item.product.price;
+  
+  const animations = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, x: 100, transition: { duration: 0.2 } },
+  };
+
+  useEffect(() => {
+    console.log("cartItem updated", item.quantity);
+  }, [item.quantity]);
+
+  const isPresent = useIsPresent();
+
+  useEffect(() => {
+    console.log(isPresent);
+    !isPresent && console.log(item.product.id, "I've been removed!");
+  }, [isPresent]);
+
 
   return (
     <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }} // Exit by sliding out to the right
-    transition={{ duration: 0.5 }}
+      {...animations}
+      layout
+      id="animated"
       className="flex justify-between items-center border-b border-rose-100 py-3"
     >
       <div className="flex flex-col gap-2">
@@ -38,9 +56,10 @@ const CartItem = (props: CartItemProps) => {
       <Button
         type="remove"
         handleClick={() => removeFromCart(item.product.id)}
-        classes="!border-rose-300 !hover:border-rose-900"
+        classes="border-rose-300 !hover:border-rose-900"
       />
     </motion.div>
+    // </AnimatePresence>
   );
 };
 
