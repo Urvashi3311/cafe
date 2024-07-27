@@ -56,7 +56,7 @@ const CartItem = (props: CartItemProps) => {
       <Button
         type="remove"
         handleClick={() => removeFromCart(item.product.id)}
-        classes="border-rose-300 !hover:border-rose-900"
+        classes="!border-rose-300 hover:!border-rose-900"
       />
     </motion.div>
     // </AnimatePresence>

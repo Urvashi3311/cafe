@@ -8,15 +8,18 @@ type ButtonProps = {
   classes?: string;
 };
 
+const common = "size-4 stroke-2 transition-all";
 const iconMap = {
   increment: (
-    <PlusIcon className="size-4 text-white stroke-2 group-hover:stroke-red" />
+    <PlusIcon className={`${common} text-white group-hover:stroke-red`} />
   ),
   decrement: (
-    <MinusIcon className="size-4 text-white stroke-2 group-hover:stroke-red" />
+    <MinusIcon className={`${common} text-white group-hover:stroke-red`} />
   ),
   remove: (
-    <XMarkIcon className="size-4 stroke-rose-300 stroke-2 hover:stroke-rose-900" />
+    <XMarkIcon
+      className={`${common} stroke-rose-300 group-hover:stroke-rose-900`}
+    />
   ),
 };
 
