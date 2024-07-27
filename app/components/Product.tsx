@@ -5,6 +5,7 @@ import { ProductType } from "@/app/lib/definitions";
 import clsx from "clsx";
 import { useAppContext } from "@/app/context";
 import ProductActions from "@/app/components/ProductActions";
+import { formatDollar } from "@/app/utils";
 
 type ProductPropTypes = {
   detail: ProductType;
@@ -78,7 +79,9 @@ const Product = (props: ProductPropTypes) => {
       <div>
         <span className="text-rose-500 text-sm">{product.category}</span>
         <h2 className="text-rose-900 font-semibold">{product.name}</h2>
-        <span className="text-red font-semibold">{`$${product.price}`}</span>
+        <span className="text-red font-semibold">
+          {formatDollar(product.price)}
+        </span>
       </div>
     </div>
   );

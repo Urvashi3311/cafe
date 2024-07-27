@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Modal from "@/app/components/Modal";
 import Order from "@/app/components/Order";
+import { formatDollar } from "@/app/utils";
 
 type CartPropTypes = {};
 
@@ -30,7 +31,7 @@ const Cart = (props: CartPropTypes) => {
 
             <div className="flex justify-between items-center mb-5">
               <p>Order Total</p>
-              <p className="font-bold text-2xl">${getOrderTotal()}</p>
+              <p className="font-bold text-2xl">{formatDollar(getOrderTotal())}</p>
             </div>
 
             <div className="bg-rose-100 rounded-md p-3 lg:p-4 flex justify-center items-center gap-2 text-sm mb-5">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import { useAppContext } from "@/app/context";
 import OrderItem from "@/app/components/OrderItem";
+import { formatDollar } from "@/app/utils";
 
 interface OrderProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -17,12 +18,7 @@ const Order = ({ setIsOpen }: OrderProps) => {
 
   return (
     <div>
-      <Image
-        src="/icon-order-confirmed.svg"
-        alt=" "
-        width={40}
-        height={40}
-      />
+      <Image src="/icon-order-confirmed.svg" alt=" " width={40} height={40} />
       <h2 className="text-4xl font-bold my-5">Order Confirmed</h2>
       <p className="mb-6 text-rose-300">We hope enjoy your food!</p>
 
@@ -33,7 +29,9 @@ const Order = ({ setIsOpen }: OrderProps) => {
 
         <div className="flex items-center justify-between">
           <span>Order Total</span>
-          <span className="font-bold text-2xl">${getOrderTotal()}</span>
+          <span className="font-bold text-2xl">
+            {formatDollar(getOrderTotal())}
+          </span>
         </div>
       </div>
       <button
