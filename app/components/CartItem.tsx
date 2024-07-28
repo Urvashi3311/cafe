@@ -4,7 +4,7 @@ import { CartItemType } from "@/app/lib/definitions";
 import Button from "@/app/components/Button";
 import { useAppContext } from "@/app/context";
 import { formatDollar } from "@/app/utils";
-import { motion, useIsPresent } from "framer-motion";
+import { motion, useIsPresent, Variants } from "framer-motion";
 import { useEffect } from "react";
 
 type CartItemProps = {
@@ -16,10 +16,17 @@ const CartItem = (props: CartItemProps) => {
   const { removeFromCart } = useAppContext();
   const cartItemTotal = item.quantity * item.product.price;
 
-  const animations = {
+  const containerVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, x: 100, transition: { duration: 0.2 } },
+  };
+
+  const quantityVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    // transition: { duration: 0.3 },
   };
 
   useEffect(() => {
@@ -34,9 +41,16 @@ const CartItem = (props: CartItemProps) => {
     !isPresent && console.log(item.product.id, "I've been removed!");
   }, [isPresent]);
 
+  useEffect(() => {
+    console.log("new quantity: ", item.product.name, item.quantity);
+  }, [item.quantity]);
+
   return (
     <motion.div
-      {...animations}
+      variants={containerVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       layout
       id="animated"
       className="flex justify-between items-center border-b border-rose-100 py-3"
@@ -46,10 +60,12 @@ const CartItem = (props: CartItemProps) => {
         <div className="text-sm">
           <motion.span
             key={item.quantity}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            variants={quantityVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            layout
+            // transition="transition"
             className="mr-4 text-red font-semibold"
           >
             {item.quantity}x

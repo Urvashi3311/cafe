@@ -26,7 +26,7 @@ const Cart = (props: CartPropTypes) => {
         {getOrderTotal() > 0 ? (
           <>
             <div className="mb-5">
-              {/* TODO: using AnimatePresence for exit animation stops cartItem to rerender correctly  */}
+              {/* TODO: (Bug) using AnimatePresence for exit animation stops cartItem to rerender correctly  */}
 
               {/* <AnimatePresence initial={false}> */}
                 {cart.map((item) => (
