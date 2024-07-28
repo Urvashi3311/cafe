@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useContext, useReducer, ReactNode } from "react";
-import { cart } from "@/app/lib/data";
 import {
   AppContextType,
   AppState,
@@ -10,7 +9,7 @@ import {
 import appReducer from "@/app/reducer";
 
 const defaultValue: AppState = {
-  cart: cart,
+  cart: [],
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
