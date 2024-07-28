@@ -4,7 +4,7 @@
 
 @layer utilities {
   .no-scroll {
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .bottom-unset {
     bottom: unset;

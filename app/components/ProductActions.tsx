@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "@/app/components/Button";
 import { useAppContext } from "@/app/context";
 import { ProductType } from "@/app/lib/definitions";
+import {motion} from 'framer-motion'
 
 type ProductActionsType = {
   isInCart: boolean;
@@ -32,7 +33,13 @@ const ProductActions = ({
             handleClick={() => handleDecCartItem(product.id)}
           />
 
-          {quantity}
+          <motion.span
+                      key={quantity}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      >{quantity}</motion.span>
           <Button
             type="increment"
             handleClick={() => incCartItem(product.id)}

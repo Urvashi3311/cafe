@@ -28,11 +28,11 @@ const Cart = (props: CartPropTypes) => {
             <div className="mb-5">
               {/* TODO: using AnimatePresence for exit animation stops cartItem to rerender correctly  */}
 
-              <AnimatePresence initial={false}>
+              {/* <AnimatePresence initial={false}> */}
                 {cart.map((item) => (
                   <CartItem item={item} key={item.product.id} />
                 ))}
-              </AnimatePresence>
+              {/* </AnimatePresence> */}
             </div>
 
             <div className="flex justify-between items-center mb-5">
