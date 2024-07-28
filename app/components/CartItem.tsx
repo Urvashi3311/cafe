@@ -15,7 +15,7 @@ const CartItem = (props: CartItemProps) => {
   const item = props.item;
   const { removeFromCart } = useAppContext();
   const cartItemTotal = item.quantity * item.product.price;
-  
+
   const animations = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -26,13 +26,13 @@ const CartItem = (props: CartItemProps) => {
     console.log("cartItem updated", item.quantity);
   }, [item.quantity]);
 
+  // TODO: remove later, only for test
   const isPresent = useIsPresent();
 
   useEffect(() => {
     console.log(isPresent);
     !isPresent && console.log(item.product.id, "I've been removed!");
   }, [isPresent]);
-
 
   return (
     <motion.div
@@ -44,7 +44,16 @@ const CartItem = (props: CartItemProps) => {
       <div className="flex flex-col gap-2">
         <h3 className="text-sm font-bold">{item.product.name}</h3>
         <div className="text-sm">
-          <span className="mr-4 text-red font-semibold">{item.quantity}x</span>
+          <motion.span
+            key={item.quantity}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mr-4 text-red font-semibold"
+          >
+            {item.quantity}x
+          </motion.span>
           <span className="mr-2 text-rose-300">
             @ {formatDollar(item.product.price)}
           </span>
@@ -59,7 +68,6 @@ const CartItem = (props: CartItemProps) => {
         classes="!border-rose-300 hover:!border-rose-900"
       />
     </motion.div>
-    // </AnimatePresence>
   );
 };
 
