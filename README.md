@@ -61,13 +61,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Flexbox &  CSS Grid
 - Mobile-first workflow
 - Typescript
 - Tailwindcss
 - Hero icons
+- Framer motion fro animations
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 
