@@ -4,8 +4,7 @@ import { CartItemType } from "@/app/lib/definitions";
 import Button from "@/app/components/Button";
 import { useAppContext } from "@/app/context";
 import { formatDollar } from "@/app/utils";
-import { motion, useIsPresent, Variants } from "framer-motion";
-import { useEffect } from "react";
+import { motion, Variants } from "framer-motion";
 
 type CartItemProps = {
   item: CartItemType;
@@ -26,24 +25,7 @@ const CartItem = (props: CartItemProps) => {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
-    // transition: { duration: 0.3 },
   };
-
-  useEffect(() => {
-    console.log("cartItem updated", item.quantity);
-  }, [item.quantity]);
-
-  // TODO: remove later, only for test
-  const isPresent = useIsPresent();
-
-  useEffect(() => {
-    console.log(isPresent);
-    !isPresent && console.log(item.product.id, "I've been removed!");
-  }, [isPresent]);
-
-  useEffect(() => {
-    console.log("new quantity: ", item.product.name, item.quantity);
-  }, [item.quantity]);
 
   return (
     <motion.div
@@ -65,7 +47,6 @@ const CartItem = (props: CartItemProps) => {
             animate="animate"
             exit="exit"
             layout
-            // transition="transition"
             className="mr-4 text-red font-semibold"
           >
             {item.quantity}x

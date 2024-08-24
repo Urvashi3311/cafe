@@ -1,6 +1,5 @@
 import { useRef, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
 import useOutsideClick from "@/app/hooks/useOutsideClick";
-// import { XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ModalProps {
@@ -70,9 +69,6 @@ const Modal = ({ children, isOpen, setIsOpen }: ModalProps) => {
         variants={modalVariants}
         transition={{ duration: 0.3 }}
       >
-        {/* <button className="btn" onClick={() => onCloseHandler()}>
-          <XMarkIcon className="size-4 " />
-        </button> */}
 
         <div className="min-h-20">{children}</div>
       </motion.div>

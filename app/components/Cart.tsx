@@ -3,12 +3,10 @@
 import { useAppContext } from "@/app/context";
 import CartItem from "@/app/components/CartItem";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Modal from "@/app/components/Modal";
 import Order from "@/app/components/Order";
 import { formatDollar } from "@/app/utils";
-import { AnimatePresence } from "framer-motion";
-import { useIsPresent } from "framer-motion";
 
 type CartPropTypes = {};
 
@@ -26,13 +24,9 @@ const Cart = (props: CartPropTypes) => {
         {getOrderTotal() > 0 ? (
           <>
             <div className="mb-5">
-              {/* TODO: (Bug) using AnimatePresence for exit animation stops cartItem to rerender correctly  */}
-
-              {/* <AnimatePresence initial={false}> */}
                 {cart.map((item) => (
                   <CartItem item={item} key={item.product.id} />
                 ))}
-              {/* </AnimatePresence> */}
             </div>
 
             <div className="flex justify-between items-center mb-5">
