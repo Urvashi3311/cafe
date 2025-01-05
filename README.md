@@ -1,21 +1,27 @@
-# Frontend Mentor - Product list with cart solution
+# Cafe Store: A Simple Cafe Menu and Order Preview
 
-This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Getting Started](#getting-started)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+Cafe Store is a clean and responsive web application built with Next.js, designed to showcase a café's dessert and menu items. Users can browse the menu, select items, and preview their order. It provides a simple and intuitive way to explore the menu and see selected items in an order summary.
 
 
-## Overview
+## Features
+
+- **Menu Listings**: Browse a list of desserts and café items with descriptions and prices.
+- **Order Preview**: Select items and view them in a simple order summary.
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices.
+- **Fast and Dynamic**: Built with Next.js for server-side rendering and fast page loads.
+- **Interactive UI**: Smooth animations powered by Framer Motion and user-friendly navigation.
+
+## Technologies Used
+
+- **Frontend**: Next.js 14, Tailwind CSS, Framer Motion
+- **Language**: TypeScript
+- **Deployment**: Vercel
+
+## Screenshots
+
+### Home Page
+![](./screenshot.jpg)
+*Fully responsive design for seamless use on mobile devices.*
 
 ### The challenge
 
@@ -31,45 +37,41 @@ Users should be able to:
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v16 or higher)
+- npm (v7 or higher)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the Repository**:
+  ```bash
+  git clone https://github.com/zeynabmvs/nextjs-cafe-store.git
+  cd nextjs-cafe-store
+  ```
+2. **Install Dependencies**:
+  ```bash
+  npm install
+  ```
+3. **Run the Development Server**:
+  ```bash
+  npm run dev
+  ```
+4. **Access the Application**:
 
-### Screenshot
-
-![](./screenshot.jpg)
+Open your browser and navigate to http://localhost:3000.
 
 ### Links
 
-- Solution URL: [Repository on Github](https://github.com/zeynabmvs/nextjs-cafe-store)
+- Solution URL: [on Frontendmentor](https://www.frontendmentor.io/profile/zeynabmvs)
 - Live Site URL: [Live site](https://nextjs-cafe-store.vercel.app/)
 
-## My process
+## Future Enhancements
+- Add user authentication for personalized order history.
+- Integrate a backend to save and manage orders.
+- Enable item customization (e.g., adding notes or special requests).
+- Expand the menu to include more categories and items.
 
-### Built with
 
-- Semantic HTML5 markup
-- Flexbox &  CSS Grid
-- Mobile-first workflow
-- Typescript
-- Tailwindcss
-- Hero icons
-- Framer motion fro animations
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
+Feel free to contribute, report issues, or suggest improvements! Your feedback is highly appreciated.
 
-## Author
-
-- Frontend Mentor - [@zeynabmvs](https://www.frontendmentor.io/profile/zeynabmvs)
